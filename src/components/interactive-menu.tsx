@@ -29,14 +29,14 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
             <div className="relative z-10 w-full max-w-4xl">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
                     {menuItems.map((item, index) => (
-                        <Link href={item.href} passHref key={item.href}>
-                            <a
-                                onClick={onClose}
-                                className="glassmorphism p-6 md:p-8 flex items-center justify-center text-xl md:text-2xl font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:bg-primary/20 hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
-                                style={{ animation: `fade-in-up 0.5s ${index * 0.1}s ease-out forwards`, opacity: 0 }}
-                            >
-                                {item.label}
-                            </a>
+                        <Link
+                            href={item.href}
+                            key={item.href}
+                            onClick={onClose}
+                            className="glassmorphism p-6 md:p-8 flex items-center justify-center text-xl md:text-2xl font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:bg-primary/20 hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
+                            style={{ animation: `fade-in-up 0.5s ${index * 0.1}s ease-out forwards`, opacity: 0 }}
+                        >
+                            {item.label}
                         </Link>
                     ))}
                 </div>
