@@ -18,7 +18,7 @@ export function Hero() {
         </h1>
         <div className="mt-8">
             <button onClick={() => setMenuOpen(true)} aria-label="Open Navigation Hub" className="cursor-pointer">
-                <Logo />
+                <Logo size={150} />
             </button>
         </div>
         <p className="mt-4 text-lg md:text-xl text-accent font-code">

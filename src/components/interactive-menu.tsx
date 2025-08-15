@@ -13,6 +13,8 @@ const menuItems = [
     { label: "Contact", href: "/#contact-us" },
 ];
 
+const RADIUS = 200; // Radius of the circle in pixels
+
 export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void; }) {
     if (!isOpen) return null;
 
@@ -26,43 +28,64 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                 }}
             />
 
-            <div className="relative z-10 w-full max-w-4xl">
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-                    {menuItems.map((item, index) => (
+            <div className="relative z-10 flex items-center justify-center" style={{ width: RADIUS * 2.5, height: RADIUS * 2.5 }}>
+                {menuItems.map((item, index) => {
+                    const angle = (index / menuItems.length) * 2 * Math.PI - (Math.PI / 2);
+                    const x = RADIUS * Math.cos(angle);
+                    const y = RADIUS * Math.sin(angle);
+                    
+                    return (
                         <Link
                             href={item.href}
                             key={item.href}
                             onClick={onClose}
-                            className="glassmorphism p-6 md:p-8 flex items-center justify-center text-xl md:text-2xl font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:bg-primary/20 hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
-                            style={{ animation: `fade-in-up 0.5s ${index * 0.1}s ease-out forwards`, opacity: 0 }}
+                            className="absolute glassmorphism p-4 w-36 h-20 flex items-center justify-center text-center text-md font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:bg-primary/20 hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
+                            style={{ 
+                                transform: `translate(${x}px, ${y}px)`,
+                                animation: `fade-in-circle 0.5s ${index * 0.1}s ease-out forwards`, 
+                                opacity: 0 
+                            }}
                         >
                             {item.label}
                         </Link>
-                    ))}
-                </div>
+                    );
+                })}
+
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={onClose}
+                    className="z-50 text-accent hover:text-white rounded-full glassmorphism w-24 h-24 hover:bg-primary/20"
+                    aria-label="Close menu"
+                >
+                    <X className="w-12 h-12" />
+                </Button>
             </div>
 
-            <Button
-                variant="ghost"
-                size="icon"
-                onClick={onClose}
-                className="absolute top-6 right-6 z-50 text-accent hover:text-white"
-                aria-label="Close menu"
-            >
-                <X className="w-8 h-8" />
-            </Button>
-
             <style jsx>{`
-                @keyframes fade-in-up {
+                @keyframes fade-in-circle {
                     from {
                         opacity: 0;
-                        transform: translateY(20px) scale(0.95);
+                        transform: translate(0, 0) scale(0.5);
                     }
                     to {
                         opacity: 1;
-                        transform: translateY(0) scale(1);
+                        transform: translate(var(--tx, 0), var(--ty, 0)) scale(1);
                     }
                 }
+                
+                /* This is a bit of a trick to pass dynamic values to CSS animation */
+                ${menuItems.map((item, index) => {
+                    const angle = (index / menuItems.length) * 2 * Math.PI - (Math.PI / 2);
+                    const x = RADIUS * Math.cos(angle);
+                    const y = RADIUS * Math.sin(angle);
+                    return `
+                        [href="${item.href}"] {
+                            --tx: ${x}px;
+                            --ty: ${y}px;
+                        }
+                    `;
+                }).join('')}
             `}</style>
         </div>
     );
