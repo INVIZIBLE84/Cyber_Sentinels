@@ -41,10 +41,11 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                             onClick={onClose}
                             className="absolute glassmorphism p-4 w-36 h-20 flex items-center justify-center text-center text-md font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:bg-primary/20 hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
                             style={{ 
-                                transform: `translate(${x}px, ${y}px)`,
                                 animation: `fade-in-circle 0.5s ${index * 0.1}s ease-out forwards`, 
-                                opacity: 0 
-                            }}
+                                opacity: 0,
+                                '--tx': `${x}px`,
+                                '--ty': `${y}px`,
+                            } as React.CSSProperties}
                         >
                             {item.label}
                         </Link>
@@ -70,22 +71,9 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                     }
                     to {
                         opacity: 1;
-                        transform: translate(var(--tx, 0), var(--ty, 0)) scale(1);
+                        transform: translate(var(--tx), var(--ty)) scale(1);
                     }
                 }
-                
-                /* This is a bit of a trick to pass dynamic values to CSS animation */
-                ${menuItems.map((item, index) => {
-                    const angle = (index / menuItems.length) * 2 * Math.PI - (Math.PI / 2);
-                    const x = RADIUS * Math.cos(angle);
-                    const y = RADIUS * Math.sin(angle);
-                    return `
-                        [href="${item.href}"] {
-                            --tx: ${x}px;
-                            --ty: ${y}px;
-                        }
-                    `;
-                }).join('')}
             `}</style>
         </div>
     );
