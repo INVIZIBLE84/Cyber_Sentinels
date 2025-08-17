@@ -40,6 +40,16 @@ const SvgGlitchLock = ({ className }: { className?: string }) => (
     </svg>
 );
 
+const SvgHack = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" className={className} fill="currentColor">
+        <path fill="#00BCD4" d="M100 10c-49.7 0-90 40.3-90 90s40.3 90 90 90 90-40.3 90-90-40.3-90-90-90zm0 162c-39.8 0-72-32.2-72-72s32.2-72 72-72 72 32.2 72 72-32.2 72-72 72z"/>
+        <path fill="#212121" d="M136.1 43.9c-3.2-3.2-8.4-3.2-11.6 0l-24.5 24.5-24.5-24.5c-3.2-3.2-8.4-3.2-11.6 0s-3.2 8.4 0 11.6l24.5 24.5-24.5 24.5c-3.2 3.2-3.2 8.4 0 11.6 1.6 1.6 3.7 2.4 5.8 2.4s4.2-.8 5.8-2.4l24.5-24.5 24.5 24.5c1.6 1.6 3.7 2.4 5.8 2.4s4.2-.8 5.8-2.4c3.2-3.2 3.2-8.4 0-11.6l-24.5-24.5 24.5-24.5c3.2-3.2 3.2-8.4 0-11.6z"/>
+        <path fill="#FFFFFF" d="M96 122.3l-13.8-13.8c-1.5-1.5-3.5-2.3-5.6-2.3s-4.1.8-5.6 2.3c-3.1 3.1-3.1 8.2 0 11.3l19.4 19.4c1.5 1.5 3.5 2.3 5.6 2.3s4.1-.8 5.6-2.3l38.9-38.9c3.1-3.1 3.1-8.2 0-11.3s-8.2-3.1-11.3 0L96 122.3z"/>
+        <path fill="#009688" d="M100 18c-45.1 0-82 36.9-82 82s36.9 82 82 82 82-36.9 82-82-36.9-82-82-82zm0 156c-40.8 0-74-33.2-74-74s33.2-74 74-74 74 33.2 74 74-33.2 74-74 74z"/>
+    </svg>
+);
+
+
 
 const FloatingIcon = ({ children, style }: { children: React.ReactNode, style: React.CSSProperties }) => (
   <div className="absolute text-foreground/10" style={style}>
@@ -55,6 +65,8 @@ export function BackgroundDecorations() {
     { top: '70%', left: '10%', transform: 'rotate(20deg)', component: SvgGlitchLock },
     { top: '80%', left: '75%', transform: 'rotate(-10deg)', component: SvgLogoInspired },
     { top: '50%', left: '50%', transform: 'rotate(5deg) translateX(-50%)', component: SvgLogoInspired },
+    { top: '40%', left: '25%', transform: 'rotate(10deg)', component: SvgHack },
+    { top: '60%', left: '90%', transform: 'rotate(-15deg)', component: SvgHack },
   ];
 
   return (
