@@ -26,7 +26,7 @@ export function Globe() {
     // Globe
     const geometry = new THREE.SphereGeometry(1.5, 32, 32);
     const material = new THREE.MeshBasicMaterial({
-      color: new THREE.Color("hsl(var(--accent))"),
+      color: new THREE.Color("black"),
       wireframe: true,
     });
     const globe = new THREE.Mesh(geometry, material);
