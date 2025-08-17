@@ -19,6 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        title: ['"Black Ops One"', ...fontFamily.sans],
         headline: ['Teko', ...fontFamily.sans],
         body: ['Orbitron', ...fontFamily.sans],
       },

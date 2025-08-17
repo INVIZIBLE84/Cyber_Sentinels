@@ -51,7 +51,7 @@
   }
 
   .gaming-title {
-    @apply font-headline text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-wider;
+    @apply font-title text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-wider;
     text-shadow: 
       0 0 5px hsl(var(--neon-blue) / 0.5),
       0 0 10px hsl(var(--neon-blue) / 0.4),
