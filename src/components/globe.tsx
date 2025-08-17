@@ -8,7 +8,7 @@ export function Globe() {
   const isDragging = useRef(false);
   const previousMousePosition = useRef({ x: 0, y: 0 });
   const rotationVelocity = useRef({ x: 0, y: 0 });
-  const globeRef = useRef<THREE.Mesh>();
+  const globeGroupRef = useRef<THREE.Group>();
   const isUserInteracting = useRef(false);
 
   useEffect(() => {
@@ -27,16 +27,32 @@ export function Globe() {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     currentMount.appendChild(renderer.domElement);
+    
+    // Globe Group
+    const globeGroup = new THREE.Group();
+    globeGroupRef.current = globeGroup;
+    scene.add(globeGroup);
 
-    // Globe
-    const geometry = new THREE.SphereGeometry(1.5, 32, 32);
-    const material = new THREE.MeshBasicMaterial({
-      color: new THREE.Color("black"),
-      wireframe: true,
+    // Solid Globe
+    const globeGeometry = new THREE.SphereGeometry(1.5, 32, 32);
+    const globeMaterial = new THREE.MeshBasicMaterial({
+      color: new THREE.Color("#111827"), 
     });
-    const globe = new THREE.Mesh(geometry, material);
-    globeRef.current = globe;
-    scene.add(globe);
+    const solidGlobe = new THREE.Mesh(globeGeometry, globeMaterial);
+    globeGroup.add(solidGlobe);
+    
+    // Wireframe
+    const wireframeGeometry = new THREE.SphereGeometry(1.5, 32, 32);
+    const wireframeMaterial = new THREE.MeshBasicMaterial({
+      color: new THREE.Color("hsl(var(--neon-blue))"),
+      wireframe: true,
+      transparent: true,
+      opacity: 0.8
+    });
+    const wireframe = new THREE.Mesh(wireframeGeometry, wireframeMaterial);
+    wireframe.scale.set(1.001, 1.001, 1.001); // Scale up slightly to prevent z-fighting
+    globeGroup.add(wireframe);
+
 
     // HVPM COET, Amravati Marker
     const lat = 20.9374; // Latitude
@@ -53,7 +69,7 @@ export function Globe() {
     const markerMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color("hsl(var(--primary))") });
     const marker = new THREE.Mesh(markerGeometry, markerMaterial);
     marker.position.set(x, y, z);
-    globe.add(marker);
+    globeGroup.add(marker);
     
     const onMouseDown = (event: MouseEvent) => {
       isDragging.current = true;
@@ -62,7 +78,7 @@ export function Globe() {
     };
 
     const onMouseMove = (event: MouseEvent) => {
-      if (!isDragging.current || !globeRef.current) return;
+      if (!isDragging.current || !globeGroupRef.current) return;
 
       const deltaX = event.clientX - previousMousePosition.current.x;
       const deltaY = event.clientY - previousMousePosition.current.y;
@@ -86,12 +102,12 @@ export function Globe() {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      if (globeRef.current) {
+      if (globeGroupRef.current) {
         if (!isUserInteracting.current) {
-          globe.rotation.y += 0.001;
+          globeGroup.rotation.y += 0.001;
         } else {
-          globe.rotation.y += rotationVelocity.current.y;
-          globe.rotation.x += rotationVelocity.current.x;
+          globeGroup.rotation.y += rotationVelocity.current.y;
+          globeGroup.rotation.x += rotationVelocity.current.x;
 
           // Apply damping
           rotationVelocity.current.y *= 0.95;
