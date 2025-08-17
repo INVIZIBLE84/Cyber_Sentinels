@@ -25,6 +25,21 @@ const SvgLogoInspired = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const SvgGlitchLock = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className={className} fill="currentColor">
+        <path fill="#C62828" d="M448 448H64c-17.67 0-32-14.33-32-32V160c0-17.67 14.33-32 32-32h384c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32z"/>
+        <path fill="#212121" d="M416 416H96V160h320v256z"/>
+        <path fill="#E53935" d="M288 288h-16v-32h-32v-16h48zM240 240h-16v16h-16v16h32zM240 304h16v16h16v-32h-32zM288 320h-16v-16h-16v-16h32z"/>
+        <path fill="#C62828" d="M256 208c-26.47 0-48 21.53-48 48v48h16v-48c0-17.64 14.36-32 32-32s32 14.36 32 32v16h16v-16c0-26.47-21.53-48-48-48z"/>
+        <path fill="#E53935" d="M272 256v16h-48v-16h16v-16h16v16h16zM320 208H192v16h128v-16zM352 240H160v16h192v-16zM320 272H192v16h128v-16zM352 304H160v16h192v-16zM320 336H192v16h128v-16zM352 368H160v16h192v-16z"/>
+        <path fill="#4527A0" d="M384 128H320l-16-32-16-32-16-32-16-32h144z"/>
+        <path fill="#7E57C2" d="M368 128h-48l16-32 16-32 16-32z"/>
+        <path fill="#FFB74D" d="M352 112a24 24 0 1 1-48 0 24 24 0 0 1 48 0z"/>
+        <path fill="#212121" d="M352 112a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-24-16a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"/>
+        <path fill="#212121" d="M384 128H320l-4-8-4-8-4-8-4-8-4-8-4-8-4-8-4-8h104l-8 32z" opacity=".2"/>
+    </svg>
+);
+
 
 const FloatingIcon = ({ children, style }: { children: React.ReactNode, style: React.CSSProperties }) => (
   <div className="absolute text-foreground/10" style={style}>
@@ -35,11 +50,11 @@ const FloatingIcon = ({ children, style }: { children: React.ReactNode, style: R
 export function BackgroundDecorations() {
   const iconSize = 150;
   const positions = [
-    { top: '10%', left: '15%', transform: 'rotate(-25deg)' },
-    { top: '20%', left: '80%', transform: 'rotate(15deg)' },
-    { top: '70%', left: '10%', transform: 'rotate(20deg)' },
-    { top: '80%', left: '75%', transform: 'rotate(-10deg)' },
-    { top: '50%', left: '50%', transform: 'rotate(5deg) translateX(-50%)' },
+    { top: '10%', left: '15%', transform: 'rotate(-25deg)', component: SvgLogoInspired },
+    { top: '20%', left: '80%', transform: 'rotate(15deg)', component: SvgGlitchLock },
+    { top: '70%', left: '10%', transform: 'rotate(20deg)', component: SvgGlitchLock },
+    { top: '80%', left: '75%', transform: 'rotate(-10deg)', component: SvgLogoInspired },
+    { top: '50%', left: '50%', transform: 'rotate(5deg) translateX(-50%)', component: SvgLogoInspired },
   ];
 
   return (
@@ -53,14 +68,16 @@ export function BackgroundDecorations() {
         <FloatingIcon 
             key={i} 
             style={{ 
-                ...pos,
+                top: pos.top,
+                left: pos.left,
+                transform: pos.transform,
                 width: `${iconSize}px`,
                 height: `${iconSize}px`,
                 animation: `float ${6 + i * 0.5}s ease-in-out infinite`,
                 opacity: 0.4,
             }}
         >
-          <SvgLogoInspired />
+          <pos.component />
         </FloatingIcon>
       ))}
 
