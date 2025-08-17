@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        headline: ['Roboto Mono', ...fontFamily.mono],
-        body: ['Open Sans', ...fontFamily.sans],
+        headline: ['Teko', ...fontFamily.sans],
+        body: ['Orbitron', ...fontFamily.sans],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -56,6 +56,10 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        'neon-blue': 'hsl(var(--neon-blue))',
+        'neon-green': 'hsl(var(--neon-green))',
+        'hot-pink': 'hsl(var(--hot-pink))',
+        'orange': 'hsl(var(--orange))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

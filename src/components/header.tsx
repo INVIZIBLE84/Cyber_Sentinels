@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "/#about-us", label: "About Us" },
-  { href: "/#contact-us", label: "Contact Us" },
+  { href: "/#about-us", label: "About" },
+  { href: "/#contact-us", label: "Contact" },
   { href: "/projects", label: "Projects" },
   { href: "/events", label: "Events" },
   { href: "/#founders", label: "Team" },
@@ -25,14 +25,15 @@ export function Header() {
     <Link
       href={href}
       onClick={onClick}
-      className="font-headline text-sm uppercase tracking-wider text-foreground/80 transition-colors hover:text-accent"
+      className="font-headline text-lg uppercase tracking-wider text-foreground/80 transition-colors hover:text-neon-blue"
+      style={{textShadow: '0 0 5px hsl(var(--neon-blue) / 0.3)'}}
     >
       {label}
     </Link>
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 py-4 glassmorphism">
+    <header className="fixed top-0 left-0 right-0 z-40 py-4 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="hidden md:flex items-center gap-8">
           {leftLinks.map((link) => (
@@ -56,11 +57,11 @@ export function Header() {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-accent" />
+                <Menu className="h-6 w-6 text-neon-blue" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-background/90 backdrop-blur-lg border-r-border w-[250px]">
+            <SheetContent side="left" className="bg-background/90 backdrop-blur-lg w-[250px]">
               <div className="flex flex-col items-center h-full pt-16">
                 <Link href="/" className="mb-12" onClick={() => setIsMobileMenuOpen(false)}>
                   <Logo />

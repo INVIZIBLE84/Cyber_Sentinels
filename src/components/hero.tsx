@@ -11,20 +11,19 @@ export function Hero() {
     <section className="relative flex items-center justify-center min-h-screen text-center overflow-hidden">
       <div className="z-10 relative px-4 flex flex-col items-center">
         <h1 
-          className="text-5xl md:text-7xl lg:text-8xl font-headline font-bold text-white relative glitch"
-          data-text="Cyber Sentinels HQ"
+          className="gaming-title text-foreground glitch-subtle"
         >
           Cyber Sentinels HQ
         </h1>
         <div className="mt-8">
-            <button onClick={() => setMenuOpen(true)} aria-label="Open Navigation Hub" className="cursor-pointer">
+            <button onClick={() => setMenuOpen(true)} aria-label="Open Navigation Hub" className="cursor-pointer transition-transform duration-300 hover:scale-110">
                 <Logo size={150} />
             </button>
         </div>
-        <p className="mt-4 text-lg md:text-xl text-accent font-code">
+        <p className="mt-4 text-lg md:text-xl text-neon-blue font-body uppercase tracking-widest">
           Guarding the Digital Frontier
         </p>
-        <div className="mt-8 text-sm text-foreground/60 font-code">
+        <div className="mt-8 text-sm text-foreground/60 font-body">
           <p>Inaugurated on: Oct 26, 2023</p>
         </div>
       </div>

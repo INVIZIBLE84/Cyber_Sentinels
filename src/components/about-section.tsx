@@ -4,13 +4,13 @@ export function AboutSection() {
   return (
     <section id="about-us" className="py-20 lg:py-32">
       <div className="container mx-auto px-4">
-        <Card className="glassmorphism max-w-4xl mx-auto">
+        <Card className="game-card max-w-4xl mx-auto text-center">
           <CardHeader>
-            <CardTitle className="text-3xl md:text-4xl font-headline text-center text-accent">
+            <CardTitle className="text-4xl md:text-5xl font-headline uppercase text-neon-blue tracking-widest">
               About Cyber Sentinels
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-base md:text-lg text-center text-foreground/80 space-y-4">
+          <CardContent className="text-base md:text-lg text-foreground/80 space-y-4 font-body">
             <p>
               Cyber Sentinels is a collective of passionate cybersecurity enthusiasts dedicated to exploring the depths of digital security. Our club was founded with the mission to foster a community of skilled and ethical digital guardians.
             </p>

@@ -46,6 +46,7 @@ export function ContactSection() {
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We will get back to you shortly.",
+      variant: "default"
     });
     form.reset();
   }
@@ -53,26 +54,26 @@ export function ContactSection() {
   return (
     <section id="contact-us" className="py-20 lg:py-32">
       <div className="container mx-auto px-4">
-        <Card className="glassmorphism max-w-2xl mx-auto">
+        <Card className="game-card max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-3xl md:text-4xl font-headline text-center text-accent">
+            <CardTitle className="text-4xl md:text-5xl font-headline uppercase text-center text-neon-blue tracking-widest">
               Get In Touch
             </CardTitle>
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 font-body">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-accent/80">Name</FormLabel>
+                      <FormLabel className="text-neon-green uppercase">Name</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your Name"
                           {...field}
-                          className="bg-background/50 focus:bg-background"
+                          className="bg-secondary/50 focus:bg-white border-2 border-border focus:border-neon-blue"
                         />
                       </FormControl>
                       <FormMessage />
@@ -84,13 +85,13 @@ export function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-accent/80">Email</FormLabel>
+                      <FormLabel className="text-neon-green uppercase">Email</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="your.email@example.com"
                           type="email"
                           {...field}
-                          className="bg-background/50 focus:bg-background"
+                          className="bg-secondary/50 focus:bg-white border-2 border-border focus:border-neon-blue"
                         />
                       </FormControl>
                       <FormMessage />
@@ -102,12 +103,12 @@ export function ContactSection() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-accent/80">Message</FormLabel>
+                      <FormLabel className="text-neon-green uppercase">Message</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Your inquiry..."
                           {...field}
-                          className="bg-background/50 focus:bg-background"
+                          className="bg-secondary/50 focus:bg-white border-2 border-border focus:border-neon-blue"
                           rows={5}
                         />
                       </FormControl>
@@ -115,7 +116,7 @@ export function ContactSection() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-headline" variant="default" size="lg">
+                <Button type="submit" className="w-full gaming-button" size="lg">
                   Send Message
                 </Button>
               </form>
