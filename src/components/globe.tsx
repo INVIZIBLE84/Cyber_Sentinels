@@ -10,6 +10,7 @@ export function Globe() {
   const rotationVelocity = useRef({ x: 0, y: 0 });
   const globeGroupRef = useRef<THREE.Group>();
   const isUserInteracting = useRef(false);
+  const interactionTimeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -72,6 +73,7 @@ export function Globe() {
     globeGroup.add(marker);
     
     const onMouseDown = (event: MouseEvent) => {
+      if (interactionTimeoutRef.current) clearTimeout(interactionTimeoutRef.current);
       isDragging.current = true;
       isUserInteracting.current = true;
       previousMousePosition.current = { x: event.clientX, y: event.clientY };
@@ -91,6 +93,10 @@ export function Globe() {
 
     const onMouseUp = () => {
       isDragging.current = false;
+      if (interactionTimeoutRef.current) clearTimeout(interactionTimeoutRef.current);
+      interactionTimeoutRef.current = setTimeout(() => {
+        isUserInteracting.current = false;
+      }, 2000);
     };
     
     currentMount.addEventListener('mousedown', onMouseDown);
@@ -135,6 +141,7 @@ export function Globe() {
       currentMount.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
+      if (interactionTimeoutRef.current) clearTimeout(interactionTimeoutRef.current);
 
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
