@@ -5,12 +5,12 @@ import { X } from "lucide-react";
 import { Button } from "./ui/button";
 
 const menuItems = [
-    { label: "About Us", href: "/#about-us", color: "bg-chart-1/30" },
-    { label: "Team", href: "/#founders", color: "bg-chart-2/30" },
-    { label: "Purpose", href: "/purpose", color: "bg-chart-3/30" },
-    { label: "Projects", href: "/projects", color: "bg-chart-4/30" },
-    { label: "Events", href: "/events", color: "bg-chart-5/30" },
-    { label: "Contact", href: "/#contact-us", color: "bg-primary/30" },
+    { label: "About Us", href: "/#about-us", color: "bg-chart-1" },
+    { label: "Team", href: "/#founders", color: "bg-chart-2" },
+    { label: "Purpose", href: "/purpose", color: "bg-chart-3" },
+    { label: "Projects", href: "/projects", color: "bg-chart-4" },
+    { label: "Events", href: "/events", color: "bg-chart-5" },
+    { label: "Contact", href: "/#contact-us", color: "bg-primary" },
 ];
 
 const RADIUS = 220; // Radius of the circle in pixels
@@ -39,7 +39,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                             href={item.href}
                             key={item.href}
                             onClick={onClose}
-                            className={`absolute hexagon backdrop-blur-md border border-white/10 p-4 w-40 h-44 flex items-center justify-center text-center text-md font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:border-accent hover:text-white hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 ${item.color}`}
+                            className={`hexagon-container absolute w-40 h-44 flex items-center justify-center`}
                             style={{ 
                                 animation: `fade-in-circle 0.5s ${index * 0.1}s ease-out forwards`, 
                                 opacity: 0,
@@ -47,7 +47,9 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                                 '--ty': `${y}px`,
                             } as React.CSSProperties}
                         >
-                            {item.label}
+                            <div className={`hexagon-content ${item.color} flex items-center justify-center text-center text-md font-headline text-white uppercase tracking-widest`}>
+                              {item.label}
+                            </div>
                         </Link>
                     );
                 })}
@@ -78,5 +80,3 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
         </div>
     );
 }
-
-    
