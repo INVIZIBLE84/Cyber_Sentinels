@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { CursorGlow } from '@/components/cursor-glow';
 
 export const metadata: Metadata = {
-  title: 'Cyber Sentinels HQ',
+  title: 'The Cyber Sentinels',
   description: 'Guarding the Digital Frontier',
 };
 

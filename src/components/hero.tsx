@@ -13,7 +13,7 @@ export function Hero() {
         <h1 
           className="gaming-title text-foreground glitch-subtle"
         >
-          Cyber Sentinels
+          The Cyber Sentinels
         </h1>
         <div className="mt-8">
             <button onClick={() => setMenuOpen(true)} aria-label="Open Navigation Hub" className="cursor-pointer transition-transform duration-300 hover:scale-110">

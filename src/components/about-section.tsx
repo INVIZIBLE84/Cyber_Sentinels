@@ -7,12 +7,12 @@ export function AboutSection() {
         <Card className="game-card max-w-4xl mx-auto text-center">
           <CardHeader>
             <CardTitle className="text-4xl md:text-5xl font-headline uppercase text-neon-blue tracking-widest">
-              About Cyber Sentinels
+              About The Cyber Sentinels
             </CardTitle>
           </CardHeader>
           <CardContent className="text-base md:text-lg text-foreground/80 space-y-4 font-body">
             <p>
-              Cyber Sentinels is a collective of passionate cybersecurity enthusiasts dedicated to exploring the depths of digital security. Our club was founded with the mission to foster a community of skilled and ethical digital guardians.
+              The Cyber Sentinels is a collective of passionate cybersecurity enthusiasts dedicated to exploring the depths of digital security. Our club was founded with the mission to foster a community of skilled and ethical digital guardians.
             </p>
             <p>
               We delve into various domains of cybersecurity, including ethical hacking, network security, cryptography, and digital forensics. Through workshops, competitions, and collaborative projects, we aim to equip our members with the knowledge and tools to tackle the cyber challenges of today and tomorrow. Our history is rooted in a shared vision of creating a safer digital world.

@@ -34,11 +34,11 @@ export function Header() {
   const BrandLink = ({onClick}: {onClick?: () => void}) => (
     <Link 
       href="/" 
-      aria-label="Cyber Sentinels HQ Home"
+      aria-label="The Cyber Sentinels Home"
       onClick={onClick}
       className="font-headline text-xl uppercase tracking-wider text-foreground/90 transition-colors hover:text-neon-blue"
     >
-      Cyber Sentinels
+      The Cyber Sentinels
     </Link>
   );
 

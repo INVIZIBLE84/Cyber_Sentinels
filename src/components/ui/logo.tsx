@@ -4,7 +4,7 @@ export function Logo({ size = 50 }: { size?: number }) {
   return (
     <Image
       src="/logo.svg"
-      alt="Cyber Sentinels Logo"
+      alt="The Cyber Sentinels Logo"
       width={size}
       height={size}
       className="object-contain"
