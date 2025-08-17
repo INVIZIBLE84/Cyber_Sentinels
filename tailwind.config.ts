@@ -22,6 +22,7 @@ export default {
         title: ['"Black Ops One"', ...fontFamily.sans],
         headline: ['Silkscreen', ...fontFamily.sans],
         body: ['Tektur', ...fontFamily.sans],
+        pixel: ['"Press Start 2P"', ...fontFamily.sans],
       },
       colors: {
         background: 'hsl(var(--background))',
