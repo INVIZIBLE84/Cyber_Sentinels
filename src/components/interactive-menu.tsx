@@ -39,7 +39,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                             href={item.href}
                             key={item.href}
                             onClick={onClose}
-                            className={`pentagon-container absolute w-40 h-40 flex items-center justify-center`}
+                            className={`sphere-container absolute w-40 h-40 flex items-center justify-center`}
                             style={{ 
                                 animation: `fade-in-circle 0.5s ${index * 0.1}s ease-out forwards`, 
                                 opacity: 0,
@@ -47,7 +47,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                                 '--ty': `${y}px`,
                             } as React.CSSProperties}
                         >
-                            <div className={`pentagon-content flex items-center justify-center text-center text-md font-headline text-white uppercase tracking-widest`}>
+                            <div className={`sphere-content flex items-center justify-center text-center text-md font-headline text-white uppercase tracking-widest`}>
                               {item.label}
                             </div>
                         </Link>
