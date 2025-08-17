@@ -2,12 +2,11 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const founders = [
-  { name: "Alex 'Glitch' Volkov", title: "Chief Strategist & Founder", img: "https://placehold.co/400x400.png", color: "neon-blue" },
-  { name: "Jasmine 'Proxy' Kaur", title: "Lead Developer & Co-Founder", img: "https://placehold.co/400x400.png", color: "neon-green" },
-  { name: "Samuel 'Cipher' Chen", title: "Head of R&D & Co-Founder", img: "https://placehold.co/400x400.png", color: "hot-pink" },
+  { name: "Shwet Shirbhayye", title: "Founder", img: "https://placehold.co/400x400.png" },
+  { name: "Darshan Kale", title: "Co-Founder", img: "https://placehold.co/400x400.png" },
 ];
 
-const FounderCard = ({ name, title, img, color }: { name: string; title: string; img: string; color: string }) => (
+const FounderCard = ({ name, title, img }: { name: string; title: string; img: string; }) => (
   <Card className="game-card h-full text-center group">
     <CardHeader className="p-0">
       <div className="relative w-full h-56 overflow-hidden rounded-t-lg">
@@ -16,7 +15,7 @@ const FounderCard = ({ name, title, img, color }: { name: string; title: string;
       </div>
     </CardHeader>
     <CardContent className="p-6">
-       <CardTitle className="text-xl font-pixel uppercase tracking-wider" style={{ color: `hsl(var(--${color}))` }}>{name}</CardTitle>
+       <CardTitle className="text-xl font-pixel uppercase tracking-wider text-foreground">{name}</CardTitle>
       <p className="text-foreground/80 mt-2 font-body">{title}</p>
     </CardContent>
   </Card>
@@ -29,7 +28,7 @@ export function FoundersSection() {
         <h2 className="text-4xl md:text-5xl font-headline text-center mb-12 uppercase text-neon-blue tracking-widest">
           Meet the Founders
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {founders.map((founder) => (
             <FounderCard key={founder.name} {...founder} />
           ))}
