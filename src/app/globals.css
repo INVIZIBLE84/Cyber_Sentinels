@@ -88,17 +88,28 @@
   }
 
   .glitch-subtle {
-    animation: glitch-subtle-anim 3s infinite alternate;
+    animation: glitch-subtle-anim 5s infinite alternate;
   }
 
   @keyframes glitch-subtle-anim {
     0% {
-      text-shadow: 0.5px 0 hsl(var(--neon-blue)), -0.5px 0 hsl(var(--hot-pink));
+      text-shadow: 1px 0 hsl(var(--neon-blue)), -1px 0 hsl(var(--hot-pink));
+      transform: skew(-0.1deg);
+    }
+    10% {
+      text-shadow: -1.5px 0 hsl(var(--neon-blue)), 1.5px 0 hsl(var(--hot-pink));
+      transform: skew(0.15deg);
+    }
+    20% {
+      text-shadow: 0.5px 0.5px hsl(var(--neon-blue)), -0.5px -0.5px hsl(var(--hot-pink));
       transform: skew(-0.05deg);
     }
+    80% {
+      text-shadow: 1px 0 hsl(var(--neon-blue)), -1px 0 hsl(var(--hot-pink));
+    }
     100% {
-      text-shadow: -0.5px 0 hsl(var(--neon-blue)), 0.5px 0 hsl(var(--hot-pink));
-      transform: skew(0.05deg);
+      text-shadow: -1px 0 hsl(var(--neon-blue)), 1px 0 hsl(var(--hot-pink));
+      transform: skew(0.1deg);
     }
   }
 }
