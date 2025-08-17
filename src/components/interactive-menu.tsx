@@ -5,21 +5,21 @@ import { X } from "lucide-react";
 import { Button } from "./ui/button";
 
 const menuItems = [
-    { label: "About Us", href: "/#about-us" },
-    { label: "Team", href: "/#founders" },
-    { label: "Purpose", href: "/purpose" },
-    { label: "Projects", href: "/projects" },
-    { label: "Events", href: "/events" },
-    { label: "Contact", href: "/#contact-us" },
+    { label: "About Us", href: "/#about-us", color: "bg-chart-1/30" },
+    { label: "Team", href: "/#founders", color: "bg-chart-2/30" },
+    { label: "Purpose", href: "/purpose", color: "bg-chart-3/30" },
+    { label: "Projects", href: "/projects", color: "bg-chart-4/30" },
+    { label: "Events", href: "/events", color: "bg-chart-5/30" },
+    { label: "Contact", href: "/#contact-us", color: "bg-primary/30" },
 ];
 
-const RADIUS = 200; // Radius of the circle in pixels
+const RADIUS = 220; // Radius of the circle in pixels
 
 export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void; }) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-background/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="absolute inset-0 w-full h-full animated-grid opacity-30" />
             <div
                 className="pointer-events-none fixed inset-0 z-50 transition-transform duration-300"
@@ -39,7 +39,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                             href={item.href}
                             key={item.href}
                             onClick={onClose}
-                            className="absolute glassmorphism p-4 w-36 h-20 flex items-center justify-center text-center text-md font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:bg-primary/20 hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
+                            className={`absolute hexagon backdrop-blur-md border border-white/10 p-4 w-40 h-44 flex items-center justify-center text-center text-md font-headline text-accent uppercase tracking-widest transition-all duration-300 hover:border-accent hover:text-white hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 ${item.color}`}
                             style={{ 
                                 animation: `fade-in-circle 0.5s ${index * 0.1}s ease-out forwards`, 
                                 opacity: 0,
@@ -78,3 +78,5 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
         </div>
     );
 }
+
+    

@@ -73,6 +73,10 @@
     @apply bg-secondary/20 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
   }
 
+  .hexagon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+
   .animated-grid {
     @apply w-full h-full absolute inset-0;
     background-image: linear-gradient(to right, hsl(var(--primary) / 0.1) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--primary) / 0.1) 1px, transparent 1px);
@@ -162,3 +166,5 @@
     100% { clip: rect(1px, 9999px, 48px, 0); transform: skew(-0.4deg); }
   }
 }
+
+    
