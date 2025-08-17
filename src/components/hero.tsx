@@ -13,7 +13,7 @@ export function Hero() {
         <h1 
           className="gaming-title text-foreground glitch-subtle"
         >
-          Cyber Sentinels HQ
+          Cyber Sentinels
         </h1>
         <div className="mt-8">
             <button onClick={() => setMenuOpen(true)} aria-label="Open Navigation Hub" className="cursor-pointer transition-transform duration-300 hover:scale-110">
@@ -21,7 +21,7 @@ export function Hero() {
             </button>
         </div>
         <p className="mt-4 text-lg md:text-xl text-neon-blue font-body uppercase tracking-widest">
-          Guarding the Digital Frontier
+          Empowering Minds, Securing Cyberspace
         </p>
         <div className="mt-8 text-sm text-foreground/60 font-body">
           <p>Inaugurated on: Oct 26, 2023</p>
