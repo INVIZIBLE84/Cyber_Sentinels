@@ -16,7 +16,7 @@ const FounderCard = ({ name, title, img, color }: { name: string; title: string;
       </div>
     </CardHeader>
     <CardContent className="p-6">
-       <CardTitle className="text-3xl font-headline uppercase tracking-wider" style={{ color: `hsl(var(--${color}))` }}>{name}</CardTitle>
+       <CardTitle className="text-2xl font-headline uppercase tracking-wider" style={{ color: `hsl(var(--${color}))` }}>{name}</CardTitle>
       <p className="text-foreground/80 mt-2 font-body">{title}</p>
     </CardContent>
   </Card>

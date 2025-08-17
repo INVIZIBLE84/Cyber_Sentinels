@@ -18,7 +18,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Monofett&family=Silkscreen&family=Tektur:wght@400..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Silkscreen&family=Tektur:wght@400..900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased relative bg-white">
         <CursorGlow />
