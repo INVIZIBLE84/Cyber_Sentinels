@@ -36,7 +36,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground cursor-none;
     scroll-behavior: smooth;
   }
 }
@@ -64,7 +64,6 @@
   }
 
   .gaming-button:hover {
-    @apply font-headline;
     transform: translateY(-2px);
     box-shadow: 0 0 15px hsl(var(--neon-green) / 0.8), 0 0 30px hsl(var(--neon-green) / 0.5);
     background-color: hsl(var(--neon-green));
