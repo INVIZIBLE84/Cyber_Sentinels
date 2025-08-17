@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Logo } from "./ui/logo";
 
 const navLinks = [
   { href: "/#about-us", label: "About" },
@@ -32,13 +33,13 @@ export function Header() {
   );
 
   const BrandLink = ({onClick}: {onClick?: () => void}) => (
-    <Link 
-      href="/" 
+    <Link
+      href="/"
       aria-label="The Cyber Sentinels Home"
       onClick={onClick}
-      className="font-headline text-xl uppercase tracking-wider text-foreground/90 transition-colors hover:text-neon-blue"
+      className="transition-transform duration-300 hover:scale-110"
     >
-      The Cyber Sentinels
+      <Logo size={40} />
     </Link>
   );
 

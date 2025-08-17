@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "./ui/button";
+import { Logo } from "./ui/logo";
 
 const menuItems = [
     { label: "About Us", href: "/#about-us", color: "neon-blue" },
@@ -24,7 +25,9 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
              }}/>
             
             <div className="relative z-10 text-center">
-                 <h2 className="font-headline text-4xl mb-12 text-foreground uppercase tracking-widest">Select Destination</h2>
+                <div className="mb-12">
+                  <Logo size={80} />
+                </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                     {menuItems.map((item, index) => (
                          <Link
