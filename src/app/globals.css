@@ -59,7 +59,7 @@
   }
   
   .gaming-button {
-    @apply font-headline uppercase text-lg text-primary-foreground bg-accent py-3 px-8 rounded-md transition-all duration-300 relative overflow-hidden;
+    @apply font-headline uppercase text-lg text-accent-foreground bg-accent py-3 px-8 rounded-md transition-all duration-300 relative overflow-hidden;
     border: 2px solid transparent;
   }
 
