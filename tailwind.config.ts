@@ -21,7 +21,7 @@ export default {
       fontFamily: {
         title: ['"Black Ops One"', ...fontFamily.sans],
         headline: ['Teko', ...fontFamily.sans],
-        body: ['Orbitron', ...fontFamily.sans],
+        body: ['Tektur', ...fontFamily.sans],
       },
       colors: {
         background: 'hsl(var(--background))',
