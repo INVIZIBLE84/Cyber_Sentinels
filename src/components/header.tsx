@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Logo } from "@/components/ui/logo";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -32,6 +31,17 @@ export function Header() {
     </Link>
   );
 
+  const BrandLink = ({onClick}: {onClick?: () => void}) => (
+    <Link 
+      href="/" 
+      aria-label="Cyber Sentinels HQ Home"
+      onClick={onClick}
+      className="font-headline text-xl uppercase tracking-wider text-foreground/90 transition-colors hover:text-neon-blue"
+    >
+      Cyber Sentinels
+    </Link>
+  );
+
   return (
     <header className="fixed top-0 left-0 right-0 z-40 py-4 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -42,9 +52,7 @@ export function Header() {
         </div>
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Link href="/" aria-label="Cyber Sentinels HQ Home">
-            <Logo />
-          </Link>
+          <BrandLink />
         </div>
         
         <div className="hidden md:flex items-center gap-8">
@@ -63,9 +71,9 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="bg-background/90 backdrop-blur-lg w-[250px]">
               <div className="flex flex-col items-center h-full pt-16">
-                <Link href="/" className="mb-12" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Logo />
-                </Link>
+                <div className="mb-12">
+                  <BrandLink onClick={() => setIsMobileMenuOpen(false)} />
+                </div>
                 <nav className="flex flex-col items-center gap-8">
                   {navLinks.map((link) => (
                     <NavLink key={link.href} {...link} onClick={() => setIsMobileMenuOpen(false)} />
