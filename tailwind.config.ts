@@ -20,7 +20,7 @@ export default {
     extend: {
       fontFamily: {
         title: ['"Black Ops One"', ...fontFamily.sans],
-        headline: ['"Nova Square"', ...fontFamily.sans],
+        headline: ['"Silkscreen"', ...fontFamily.sans],
         body: ['Tektur', ...fontFamily.sans],
       },
       colors: {
