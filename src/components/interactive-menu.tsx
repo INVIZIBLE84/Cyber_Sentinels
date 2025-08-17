@@ -31,7 +31,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                             href={item.href}
                             key={item.href}
                             onClick={onClose}
-                            className="gaming-button"
+                            className="gaming-button font-headline"
                             style={{ 
                                 animation: `fade-in-up 0.5s ${index * 0.1}s ease-out forwards`, 
                                 opacity: 0,
