@@ -5,6 +5,11 @@ import * as THREE from 'three';
 
 export function Globe() {
   const mountRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const previousMousePosition = useRef({ x: 0, y: 0 });
+  const rotationVelocity = useRef({ x: 0, y: 0 });
+  const globeRef = useRef<THREE.Mesh>();
+  const isUserInteracting = useRef(false);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -30,6 +35,7 @@ export function Globe() {
       wireframe: true,
     });
     const globe = new THREE.Mesh(geometry, material);
+    globeRef.current = globe;
     scene.add(globe);
 
     // HVPM COET, Amravati Marker
@@ -48,11 +54,51 @@ export function Globe() {
     const marker = new THREE.Mesh(markerGeometry, markerMaterial);
     marker.position.set(x, y, z);
     globe.add(marker);
+    
+    const onMouseDown = (event: MouseEvent) => {
+      isDragging.current = true;
+      isUserInteracting.current = true;
+      previousMousePosition.current = { x: event.clientX, y: event.clientY };
+    };
+
+    const onMouseMove = (event: MouseEvent) => {
+      if (!isDragging.current || !globeRef.current) return;
+
+      const deltaX = event.clientX - previousMousePosition.current.x;
+      const deltaY = event.clientY - previousMousePosition.current.y;
+      
+      rotationVelocity.current.y = deltaX * 0.0005;
+      rotationVelocity.current.x = deltaY * 0.0005;
+
+      previousMousePosition.current = { x: event.clientX, y: event.clientY };
+    };
+
+    const onMouseUp = () => {
+      isDragging.current = false;
+    };
+    
+    currentMount.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+
 
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      globe.rotation.y += 0.001;
+
+      if (globeRef.current) {
+        if (!isUserInteracting.current) {
+          globe.rotation.y += 0.001;
+        } else {
+          globe.rotation.y += rotationVelocity.current.y;
+          globe.rotation.x += rotationVelocity.current.x;
+
+          // Apply damping
+          rotationVelocity.current.y *= 0.95;
+          rotationVelocity.current.x *= 0.95;
+        }
+      }
+      
       renderer.render(scene, camera);
     };
     animate();
@@ -70,11 +116,15 @@ export function Globe() {
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      currentMount.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full" />;
+  return <div ref={mountRef} className="w-full h-full cursor-grab active:cursor-grabbing" />;
 }
