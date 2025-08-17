@@ -5,12 +5,12 @@ import { X } from "lucide-react";
 import { Button } from "./ui/button";
 
 const menuItems = [
-    { label: "About Us", href: "/#about-us", color: "bg-chart-1" },
-    { label: "Team", href: "/#founders", color: "bg-chart-2" },
-    { label: "Purpose", href: "/purpose", color: "bg-chart-3" },
-    { label: "Projects", href: "/projects", color: "bg-chart-4" },
-    { label: "Events", href: "/events", color: "bg-chart-5" },
-    { label: "Contact", href: "/#contact-us", color: "bg-primary" },
+    { label: "About Us", href: "/#about-us" },
+    { label: "Team", href: "/#founders" },
+    { label: "Purpose", href: "/purpose" },
+    { label: "Projects", href: "/projects" },
+    { label: "Events", href: "/events" },
+    { label: "Contact", href: "/#contact-us" },
 ];
 
 const RADIUS = 220; // Radius of the circle in pixels
@@ -39,7 +39,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                             href={item.href}
                             key={item.href}
                             onClick={onClose}
-                            className={`hexagon-container absolute w-40 h-44 flex items-center justify-center`}
+                            className={`pentagon-container absolute w-40 h-40 flex items-center justify-center`}
                             style={{ 
                                 animation: `fade-in-circle 0.5s ${index * 0.1}s ease-out forwards`, 
                                 opacity: 0,
@@ -47,7 +47,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                                 '--ty': `${y}px`,
                             } as React.CSSProperties}
                         >
-                            <div className={`hexagon-content ${item.color} flex items-center justify-center text-center text-md font-headline text-white uppercase tracking-widest`}>
+                            <div className={`pentagon-content flex items-center justify-center text-center text-md font-headline text-white uppercase tracking-widest`}>
                               {item.label}
                             </div>
                         </Link>

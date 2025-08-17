@@ -73,51 +73,26 @@
     @apply bg-secondary/20 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
   }
 
-  .hexagon-container {
+  .pentagon-container {
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: drop-shadow(0 0 0.5rem hsl(var(--primary) / 0));
   }
   
-  .hexagon-container:hover {
+  .pentagon-container:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 1.5rem hsl(var(--primary) / 0.5));
   }
 
-  .hexagon-content {
+  .pentagon-content {
     width: 100%;
     height: 100%;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    transition: background-image 0.3s ease;
-    position: relative;
-    background-size: 200% 200%;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    @apply bg-primary/20 backdrop-blur-md border border-primary/30;
+    transition: background-color 0.3s ease;
   }
   
-  .hexagon-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background: linear-gradient(45deg, hsla(0, 0%, 100%, 0.15), hsla(0, 0%, 100%, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .hexagon-container:hover .hexagon-content::before {
-    opacity: 1;
-  }
-  
-  .hexagon-content.bg-chart-1 { background-image: linear-gradient(135deg, hsl(var(--chart-1)), hsl(var(--chart-1) / 0.7)); }
-  .hexagon-content.bg-chart-2 { background-image: linear-gradient(135deg, hsl(var(--chart-2)), hsl(var(--chart-2) / 0.7)); }
-  .hexagon-content.bg-chart-3 { background-image: linear-gradient(135deg, hsl(var(--chart-3)), hsl(var(--chart-3) / 0.7)); }
-  .hexagon-content.bg-chart-4 { background-image: linear-gradient(135deg, hsl(var(--chart-4)), hsl(var(--chart-4) / 0.7)); }
-  .hexagon-content.bg-chart-5 { background-image: linear-gradient(135deg, hsl(var(--chart-5)), hsl(var(--chart-5) / 0.7)); }
-  .hexagon-content.bg-primary { background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.7)); }
-
-  .hexagon-container:hover .hexagon-content {
-    background-position: 100% 100%;
+  .pentagon-container:hover .pentagon-content {
+    @apply bg-primary/30;
   }
 
   .animated-grid {
