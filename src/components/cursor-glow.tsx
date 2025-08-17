@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { ArrowRight } from 'lucide-react';
 
 export function CursorGlow() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
@@ -42,9 +41,7 @@ export function CursorGlow() {
             transform: `translate(-50%, -50%) scale(${isPointer ? 1.5 : 1})`,
             transition: 'transform 0.2s ease-out',
       }}>
-        <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${isPointer ? 'bg-neon-green/50 border-neon-green' : 'border-neon-blue'}`}>
-          <ArrowRight className={`w-4 h-4 transition-all duration-200 ${isPointer ? 'text-white' : 'text-neon-blue'}`} />
-        </div>
+        <div className={`w-2 h-2 rounded-full transition-all duration-200 ${isPointer ? 'bg-neon-green' : 'bg-neon-blue'}`} />
       </div>
     </>
   );
