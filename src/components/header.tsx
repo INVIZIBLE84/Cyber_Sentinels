@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/#contact-us", label: "Contact" },
   { href: "/projects", label: "Projects" },
   { href: "/events", label: "Events" },
-  { href: "/#founders", label: "Team" },
+  { href: "/team", label: "Team" },
 ];
 
 export function Header() {

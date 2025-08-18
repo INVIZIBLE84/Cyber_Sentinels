@@ -7,7 +7,7 @@ import { Logo } from "./ui/logo";
 
 const menuItems = [
     { label: "About Us", href: "/#about-us", color: "neon-blue" },
-    { label: "Team", href: "/#founders", color: "neon-green" },
+    { label: "Team", href: "/team", color: "neon-green" },
     { label: "Purpose", href: "/purpose", color: "hot-pink" },
     { label: "Projects", href: "/projects", color: "orange" },
     { label: "Events", href: "/events", color: "neon-blue" },
