@@ -62,6 +62,7 @@ export default {
         'neon-green': 'hsl(var(--neon-green))',
         'hot-pink': 'hsl(var(--hot-pink))',
         'orange': 'hsl(var(--orange))',
+        'neon-purple': 'hsl(var(--neon-purple))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
