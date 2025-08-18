@@ -20,7 +20,7 @@ export function BackgroundDecorations() {
     const generateShapes = () => {
       const newShapes = Array.from({ length: 20 }).map((_, i) => {
         const size = Math.random() * 80 + 20;
-        const color = Math.random() > 0.5 ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)';
+        const color = Math.random() > 0.5 ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.4)';
         const type = ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)] as 'circle' | 'square' | 'triangle';
         return {
           id: i,
