@@ -1,14 +1,59 @@
 
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+const Shape = ({ shape, style }: { shape: 'circle' | 'square' | 'triangle', style: React.CSSProperties }) => {
+    switch (shape) {
+        case 'circle':
+            return <div className="rounded-full" style={style} />;
+        case 'square':
+            return <div style={style} />;
+        case 'triangle':
+            return <div style={{...style, width: 0, height: 0, borderLeft: `${style.width as number / 2}px solid transparent`, borderRight: `${style.width as number / 2}px solid transparent`, borderBottom: `${style.height}px solid ${style.backgroundColor}`, background: 'transparent' }} />;
+    }
+};
 
 export function BackgroundDecorations() {
+  const [shapes, setShapes] = useState<any[]>([]);
+
+  useEffect(() => {
+    const generateShapes = () => {
+      const newShapes = Array.from({ length: 20 }).map((_, i) => {
+        const size = Math.random() * 80 + 20;
+        const color = Math.random() > 0.5 ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.4)';
+        const type = ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)] as 'circle' | 'square' | 'triangle';
+        return {
+          id: i,
+          type,
+          style: {
+            position: 'absolute',
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            width: size,
+            height: size,
+            backgroundColor: color,
+            transform: `rotate(${Math.random() * 360}deg)`,
+            transition: 'all 2s ease-in-out',
+          },
+        };
+      });
+      setShapes(newShapes);
+    };
+    generateShapes();
+  }, []);
+
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
        <div className="absolute inset-0 w-full h-full opacity-5" style={{
           backgroundImage: 'linear-gradient(hsl(var(--neon-blue)/0.3) 1px, transparent 1px), linear-gradient(to right, hsl(var(--neon-blue)/0.3) 1px, transparent 1px)',
           backgroundSize: '2rem 2rem',
        }}/>
+
+      <div className="absolute inset-0">
+        {shapes.map(shape => (
+          <Shape key={shape.id} shape={shape.type} style={shape.style} />
+        ))}
+      </div>
 
       <div className="absolute left-[max(50%,25rem)] top-0 h-[60rem] w-[120rem] -translate-x-1/2 [mask-image:radial-gradient(50%_50%_at_top_center,white,transparent)]">
         <svg
