@@ -18,8 +18,8 @@ export function BackgroundDecorations() {
 
   useEffect(() => {
     const generateShapes = () => {
-      const newShapes = Array.from({ length: 20 }).map((_, i) => {
-        const size = Math.random() * 80 + 20;
+      const newShapes = Array.from({ length: 10 }).map((_, i) => {
+        const size = Math.random() * 60 + 20;
         const color = Math.random() > 0.5 ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.4)';
         const type = ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)] as 'circle' | 'square' | 'triangle';
         return {
@@ -34,6 +34,8 @@ export function BackgroundDecorations() {
             backgroundColor: color,
             transform: `rotate(${Math.random() * 360}deg)`,
             transition: 'all 2s ease-in-out',
+            animation: `float 6s ease-in-out infinite`,
+            animationDelay: `${Math.random() * 2}s`,
           },
         };
       });
