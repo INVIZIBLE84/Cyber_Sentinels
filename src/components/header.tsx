@@ -25,8 +25,7 @@ export function Header() {
     <Link
       href={href}
       onClick={onClick}
-      className="font-headline text-lg uppercase tracking-wider text-foreground/80 transition-colors hover:text-neon-blue"
-      style={{textShadow: '0 0 5px hsl(var(--neon-blue) / 0.3)'}}
+      className="font-headline text-lg uppercase tracking-wider text-foreground/80 transition-colors hover:text-primary"
     >
       {label}
     </Link>
@@ -70,7 +69,7 @@ export function Header() {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-neon-blue" />
+                <Menu className="h-6 w-6 text-primary" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>

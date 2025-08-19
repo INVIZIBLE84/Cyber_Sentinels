@@ -6,12 +6,12 @@ import { Button } from "./ui/button";
 import { Logo } from "./ui/logo";
 
 const menuItems = [
-    { label: "About Us", href: "/#about-us", color: "neon-blue" },
-    { label: "Team", href: "/team", color: "neon-green" },
-    { label: "Purpose", href: "/purpose", color: "hot-pink" },
-    { label: "Projects", href: "/projects", color: "orange" },
-    { label: "Events", href: "/events", color: "neon-blue" },
-    { label: "Contact", href: "/#contact-us", color: "neon-green" },
+    { label: "About Us", href: "/#about-us" },
+    { label: "Team", href: "/team" },
+    { label: "Purpose", href: "/purpose" },
+    { label: "Projects", href: "/projects" },
+    { label: "Events", href: "/events" },
+    { label: "Contact", href: "/#contact-us" },
 ];
 
 export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void; }) {
@@ -19,11 +19,6 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
 
     return (
         <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-             <div className="absolute inset-0 w-full h-full opacity-5" style={{
-                backgroundImage: 'linear-gradient(hsl(var(--neon-blue)/0.3) 1px, transparent 1px), linear-gradient(to right, hsl(var(--neon-blue)/0.3) 1px, transparent 1px)',
-                backgroundSize: '2rem 2rem',
-             }}/>
-            
             <div className="relative z-10 text-center">
                 <div className="mb-12">
                   <Logo size={80} />
@@ -38,7 +33,6 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                             style={{ 
                                 animation: `fade-in-up 0.5s ${index * 0.1}s ease-out forwards`, 
                                 opacity: 0,
-                                '--glow-color': `hsl(var(--${item.color}))`
                             } as React.CSSProperties}
                         >
                            {item.label}
@@ -68,11 +62,6 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
                         opacity: 1;
                         transform: translateY(0);
                     }
-                }
-                .gaming-button:hover {
-                    box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color);
-                    background-color: var(--glow-color);
-                    color: black;
                 }
             `}</style>
         </div>

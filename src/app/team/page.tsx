@@ -70,15 +70,15 @@ const teamMembers = [
 
 export default function TeamPage() {
   return (
-    <div className="relative min-h-screen w-full overflow-x-clip bg-background">
+    <div className="relative min-h-screen w-full overflow-x-clip">
       <BackgroundDecorations />
       <main className="relative z-10 container mx-auto px-4 py-20 lg:py-24 text-center">
         <div className="absolute top-8 left-8">
-            <Button asChild className="bg-neon-blue text-white hover:bg-neon-blue/80">
+            <Button asChild className="bg-blue-600 text-white hover:bg-blue-700">
                 <Link href="/"><ArrowLeft className="mr-2 h-4 w-4" /> Return to HQ</Link>
             </Button>
         </div>
-        <h1 className="text-5xl font-headline text-neon-blue uppercase tracking-widest mb-4 glitch-subtle">Meet the Sentinels</h1>
+        <h1 className="text-5xl font-headline text-primary uppercase tracking-widest mb-4">Meet the Sentinels</h1>
         <p className="text-xl text-foreground/80 mb-12 font-body max-w-3xl mx-auto">
           Our team is composed of passionate experts and rising talent in the cybersecurity world, united by a single mission: to guard the digital frontier.
         </p>

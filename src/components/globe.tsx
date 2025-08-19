@@ -45,7 +45,7 @@ export function Globe() {
     // Wireframe
     const wireframeGeometry = new THREE.SphereGeometry(1.5, 32, 32);
     const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color("hsl(var(--neon-blue))"),
+      color: new THREE.Color("hsl(var(--primary))"),
       wireframe: true,
       transparent: true,
       opacity: 0.8

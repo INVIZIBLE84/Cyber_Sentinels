@@ -26,8 +26,8 @@ export function TeamCard({ name, title, experience, img }: TeamCardProps) {
           </div>
         </CardHeader>
         <CardContent className="p-6">
-          <h3 className="text-xl font-headline uppercase tracking-wider text-neon-blue">{name}</h3>
-          <p className="text-neon-green/80 mt-1 font-body text-sm">{title}</p>
+          <h3 className="text-xl font-headline uppercase tracking-wider text-primary">{name}</h3>
+          <p className="text-accent/80 mt-1 font-body text-sm">{title}</p>
           <p className="text-foreground/70 mt-4 font-body text-sm">{experience}</p>
         </CardContent>
       </Card>

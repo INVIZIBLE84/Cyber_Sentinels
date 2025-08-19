@@ -6,7 +6,7 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         <Card className="game-card max-w-4xl mx-auto text-center">
           <CardHeader>
-            <CardTitle className="text-4xl md:text-5xl font-headline uppercase text-neon-blue tracking-widest">
+            <CardTitle className="text-4xl md:text-5xl font-headline uppercase text-primary tracking-widest">
               About The Cyber Sentinels
             </CardTitle>
           </CardHeader>

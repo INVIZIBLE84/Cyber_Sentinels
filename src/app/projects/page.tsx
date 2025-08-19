@@ -6,22 +6,22 @@ import { ArrowLeft, BarChartBig, Bell, GraduationCap, UserSquare } from "lucide-
 
 const features = [
   {
-    icon: <GraduationCap className="h-8 w-8 text-neon-purple" />,
+    icon: <GraduationCap className="h-8 w-8 text-purple-500" />,
     title: "Student Dashboard",
     description: "Attendance overview, fee status, clearance forms, notice downloads, and applications."
   },
   {
-    icon: <UserSquare className="h-8 w-8 text-neon-purple" />,
+    icon: <UserSquare className="h-8 w-8 text-purple-500" />,
     title: "Faculty Dashboard",
     description: "Attendance management, analytics, document uploads, and clearance approvals."
   },
   {
-    icon: <BarChartBig className="h-8 w-8 text-neon-purple" />,
+    icon: <BarChartBig className="h-8 w-8 text-purple-500" />,
     title: "Analytics & Reporting",
     description: "Real-time and ML-powered insights for academic performance, attendance, and fee tracking."
   },
   {
-    icon: <Bell className="h-8 w-8 text-neon-purple" />,
+    icon: <Bell className="h-8 w-8 text-purple-500" />,
     title: "Smart Notifications",
     description: "Automated alerts for attendance, fee dues, clearance updates, and announcements."
   },
@@ -29,20 +29,20 @@ const features = [
 
 export default function ProjectsPage() {
   return (
-    <div className="relative min-h-screen w-full overflow-x-clip bg-background">
+    <div className="relative min-h-screen w-full overflow-x-clip">
       <BackgroundDecorations />
       <main className="relative z-10 container mx-auto px-4 py-20 lg:py-24">
          <div className="absolute top-8 left-8">
-            <Button asChild className="bg-neon-blue text-white hover:bg-neon-blue/80">
+            <Button asChild className="bg-blue-600 text-white hover:bg-blue-700">
                 <Link href="/"><ArrowLeft className="mr-2 h-4 w-4" /> Return to HQ</Link>
             </Button>
         </div>
-        <h1 className="text-5xl font-headline text-center text-neon-blue uppercase tracking-widest mb-12 glitch-subtle">Projects</h1>
+        <h1 className="text-5xl font-headline text-center text-primary uppercase tracking-widest mb-12">Projects</h1>
         
         <Card className="game-card-purple max-w-5xl mx-auto">
           <CardHeader>
             <CardTitle className="text-center">
-              <h2 className="text-4xl md:text-5xl font-headline uppercase text-neon-purple tracking-widest">S.P.A.R.K.</h2>
+              <h2 className="text-4xl md:text-5xl font-headline uppercase text-purple-600 tracking-widest">S.P.A.R.K.</h2>
               <p className="text-lg md:text-xl font-body text-foreground/80 mt-2">System for Performance Analytics, Recognition & Kinetics</p>
             </CardTitle>
           </CardHeader>
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-headline text-neon-purple uppercase tracking-wider mb-6 text-center">Key Features</h3>
+              <h3 className="text-2xl font-headline text-purple-600 uppercase tracking-wider mb-6 text-center">Key Features</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {features.map((feature) => (
                   <div key={feature.title} className="flex items-start gap-4">
@@ -70,11 +70,11 @@ export default function ProjectsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
               <div>
-                <h3 className="text-2xl font-headline text-neon-purple uppercase tracking-wider mb-4">Purpose</h3>
+                <h3 className="text-2xl font-headline text-purple-600 uppercase tracking-wider mb-4">Purpose</h3>
                 <p className="text-foreground/80 font-body">To streamline academic workflows while ensuring Confidentiality, Integrity, and Availability (CIA triad principles) of student data.</p>
               </div>
               <div>
-                <h3 className="text-2xl font-headline text-neon-purple uppercase tracking-wider mb-4">Vision</h3>
+                <h3 className="text-2xl font-headline text-purple-600 uppercase tracking-wider mb-4">Vision</h3>
                 <p className="text-foreground/80 font-body">SPARK aims to become a benchmark student-faculty management system, blending security, accessibility, and innovation.</p>
               </div>
             </div>

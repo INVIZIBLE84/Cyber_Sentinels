@@ -56,7 +56,7 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <Card className="game-card max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-4xl md:text-5xl font-headline uppercase text-center text-neon-blue tracking-widest">
+            <CardTitle className="text-4xl md:text-5xl font-headline uppercase text-center text-primary tracking-widest">
               Get In Touch
             </CardTitle>
           </CardHeader>
@@ -68,12 +68,12 @@ export function ContactSection() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-neon-green uppercase">Name</FormLabel>
+                      <FormLabel className="text-primary uppercase">Name</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your Name"
                           {...field}
-                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-neon-blue"
+                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-primary"
                         />
                       </FormControl>
                       <FormMessage />
@@ -85,13 +85,13 @@ export function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-neon-green uppercase">Email</FormLabel>
+                      <FormLabel className="text-primary uppercase">Email</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="your.email@example.com"
                           type="email"
                           {...field}
-                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-neon-blue"
+                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-primary"
                         />
                       </FormControl>
                       <FormMessage />
@@ -103,12 +103,12 @@ export function ContactSection() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-neon-green uppercase">Message</FormLabel>
+                      <FormLabel className="text-primary uppercase">Message</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Your inquiry..."
                           {...field}
-                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-neon-blue"
+                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-primary"
                           rows={5}
                         />
                       </FormControl>
