@@ -11,7 +11,7 @@ interface TeamCardProps {
 export function TeamCard({ name, title, experience, img }: TeamCardProps) {
   return (
     <div className="group perspective-1000">
-      <Card className="game-card h-full text-left transition-transform duration-500 ease-in-out group-hover:rotate-y-12">
+      <Card className="game-card h-full text-left transition-transform duration-500 ease-in-out group-hover:rotate-y-12 bg-card/80 backdrop-blur-sm">
         <CardHeader className="p-0">
           <div className="relative w-full h-56 overflow-hidden rounded-t-lg">
             <Image 

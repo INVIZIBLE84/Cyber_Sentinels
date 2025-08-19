@@ -46,7 +46,7 @@ export function CursorGlow() {
       <div
         className="pointer-events-none fixed inset-0 z-50 transition duration-300"
         style={{
-          background: `radial-gradient(600px at ${delayedPosition.x}px ${delayedPosition.y}px, hsl(var(--neon-blue) / 0.15), transparent 80%)`,
+          background: `radial-gradient(600px at ${delayedPosition.x}px ${delayedPosition.y}px, hsl(var(--neon-blue) / 0.1), transparent 80%)`,
         }}
       />
       <div 

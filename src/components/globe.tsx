@@ -37,7 +37,7 @@ export function Globe() {
     // Solid Globe
     const globeGeometry = new THREE.SphereGeometry(1.5, 32, 32);
     const globeMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color("#111827"), 
+      color: new THREE.Color("hsl(var(--secondary))"), 
     });
     const solidGlobe = new THREE.Mesh(globeGeometry, globeMaterial);
     globeGroup.add(solidGlobe);
