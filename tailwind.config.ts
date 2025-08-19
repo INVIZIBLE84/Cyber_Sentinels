@@ -20,8 +20,8 @@ export default {
     extend: {
       fontFamily: {
         title: ['"Black Ops One"', ...fontFamily.sans],
-        headline: ['Tektur', ...fontFamily.sans],
-        body: ['Tektur', ...fontFamily.sans],
+        headline: ['"Roboto Mono"', 'Tektur', ...fontFamily.sans],
+        body: ['"Open Sans"', ...fontFamily.sans],
         pixel: ['Doto', ...fontFamily.mono],
       },
       colors: {
@@ -102,7 +102,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'float': 'float 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       perspective: {
         '1000': '1000px',

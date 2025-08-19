@@ -20,7 +20,7 @@ export function BackgroundDecorations() {
     const generateShapes = () => {
       const newShapes = Array.from({ length: 10 }).map((_, i) => {
         const size = Math.random() * 60 + 20;
-        const color = Math.random() > 0.5 ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.4)';
+        const color = Math.random() > 0.5 ? 'hsla(var(--foreground), 0.1)' : 'hsla(var(--foreground), 0.1)';
         const type = ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)] as 'circle' | 'square' | 'triangle';
         return {
           id: i,
@@ -36,6 +36,7 @@ export function BackgroundDecorations() {
             transition: 'all 2s ease-in-out',
             animation: `float 6s ease-in-out infinite`,
             animationDelay: `${Math.random() * 2}s`,
+            opacity: Math.random() * 0.4 + 0.1,
           },
         };
       });
@@ -46,9 +47,9 @@ export function BackgroundDecorations() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-       <div className="absolute inset-0 w-full h-full opacity-5" style={{
+       <div className="absolute inset-0 w-full h-full opacity-20" style={{
           backgroundImage: 'linear-gradient(hsl(var(--neon-blue)/0.3) 1px, transparent 1px), linear-gradient(to right, hsl(var(--neon-blue)/0.3) 1px, transparent 1px)',
-          backgroundSize: '2rem 2rem',
+          backgroundSize: '2.5rem 2.5rem',
        }}/>
 
       <div className="absolute inset-0">
