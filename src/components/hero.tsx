@@ -19,7 +19,7 @@ export function Hero() {
           Empowering Minds, Securing Cyberspace
         </p>
         <div className="mt-8 text-sm text-foreground/60 font-body">
-          <p>Inaugurated on: Oct 26, 2023</p>
+          <p>Inaugurated on: Apr 23, 2024</p>
         </div>
       </div>
     </section>

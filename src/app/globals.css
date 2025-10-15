@@ -91,6 +91,9 @@
   .game-card:hover {
     @apply border-primary/80 shadow-xl;
   }
+  .event-card {
+    @apply bg-secondary/30;
+  }
   
   .gaming-title {
     @apply font-title text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-wider text-foreground;
