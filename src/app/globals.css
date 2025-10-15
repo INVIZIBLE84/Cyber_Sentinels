@@ -106,7 +106,7 @@
   }
 
   .gaming-button:hover {
-    @apply bg-primary/90;
+    @apply bg-primary/90 text-primary-foreground;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }

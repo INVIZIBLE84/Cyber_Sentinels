@@ -10,7 +10,7 @@ export default function EventsPage() {
     {
       icon: Calendar,
       label: "Date",
-      value: "Saturday, 1st November 2025",
+      value: "Wednesday, 12th November 2025",
     },
     {
       icon: Clock,
@@ -20,12 +20,12 @@ export default function EventsPage() {
     {
       icon: Mic,
       label: "Venue",
-      value: "Online (Link to be provided to registered participants)",
+      value: "HVPM COET Campus, Amravati",
     },
     {
       icon: Info,
       label: "Eligibility",
-      value: "Open to all students of the college",
+      value: "Open to all students of HVPM COET College",
     },
     {
       icon: Users,
@@ -35,7 +35,7 @@ export default function EventsPage() {
     {
         icon: Ticket,
         label: "Registration Closes",
-        value: "Thursday, 30th October 2025",
+        value: "Friday, 31st October 2025",
     }
   ];
 
