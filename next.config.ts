@@ -2,6 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
+  basePath: '/Cyber_Sentinels',
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
