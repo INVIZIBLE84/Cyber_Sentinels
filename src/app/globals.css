@@ -156,18 +156,31 @@
   100% { transform: translateY(0px); }
 }
 
-@keyframes grid-pan {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
+@keyframes flow {
+  0% { stroke-dashoffset: 2000; }
+  100% { stroke-dashoffset: 0; }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.4; }
+@keyframes flow-reverse {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 2000; }
 }
 
-@keyframes aurora {
-  0% { background-position: 0% 50% }
-  50% { background-position: 100% 50% }
-  100% { background-position: 0% 50% }
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.animate-flow {
+  stroke-dasharray: 2000;
+  animation: flow 100s linear infinite;
+}
+
+.animate-flow-reverse {
+  stroke-dasharray: 2000;
+  animation: flow-reverse 100s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
 }
