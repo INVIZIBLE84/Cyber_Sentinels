@@ -10,9 +10,8 @@ import { Logo } from "./ui/logo";
 const navLinks = [
   { href: "/#about-us", label: "About" },
   { href: "/#contact-us", label: "Contact" },
-  { href: "/projects", label: "Projects" },
   { href: "/events", label: "Events" },
-  { href: "/team", label: "Team" },
+  { href: "/purpose", label: "Purpose" },
 ];
 
 export function Header() {
