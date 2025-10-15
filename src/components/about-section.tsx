@@ -27,15 +27,15 @@ export function AboutSection() {
                 This simple motto drives everything we do.
               </p>
               <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div className="p-4 bg-background/20 rounded-lg">
+                  <div className="p-4 bg-background/20 rounded-lg border border-border">
                       <h4 className="font-bold text-xl text-foreground mb-2">Learn</h4>
                       <p className="text-sm">We are committed to continuous learning, staying ahead of the curve on the latest trends in cybersecurity, software development, and digital innovation. We create a space where asking questions is encouraged and knowledge is shared freely.</p>
                   </div>
-                  <div className="p-4 bg-background/20 rounded-lg">
+                  <div className="p-4 bg-background/20 rounded-lg border border-border">
                       <h4 className="font-bold text-xl text-foreground mb-2">Build</h4>
                       <p className="text-sm">We are creators at heart. We don't just consume technology; we build it. From designing engaging CTF challenges like "The Gilded Game" to developing digital solutions for real-world problems, our projects are where our skills come to life.</p>
                   </div>
-                  <div className="p-4 bg-background/20 rounded-lg">
+                  <div className="p-4 bg-background/20 rounded-lg border border-border">
                       <h4 className="font-bold text-xl text-foreground mb-2">Secure</h4>
                       <p className="text-sm">Our ultimate goal is to foster a culture of digital responsibility. We learn to think like hackers so we can build stronger defenses, championing an ethical and proactive approach to securing the digital world for everyone.</p>
                   </div>
