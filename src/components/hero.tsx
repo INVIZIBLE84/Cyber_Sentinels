@@ -1,6 +1,5 @@
 "use client";
 
-import { InteractiveMenu } from "./interactive-menu";
 import { Logo } from "./ui/logo";
 
 export function Hero() {
@@ -11,7 +10,8 @@ export function Hero() {
           <Logo size={250} />
         </div>
         <h1 
-          className="gaming-title text-foreground"
+          className="gaming-title text-foreground relative glitch-effect"
+          data-text="The Cyber Sentinels"
         >
           The Cyber Sentinels
         </h1>
