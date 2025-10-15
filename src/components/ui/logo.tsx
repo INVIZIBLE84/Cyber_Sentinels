@@ -1,17 +1,17 @@
+import Image from 'next/image';
+
 export function Logo({ size = 50 }: { size?: number }) {
+  // Assuming the original logo aspect ratio was roughly 240/80 = 3:1
+  // The new logo appears to be closer to square.
+  // We'll use size for both width and height to make it a square,
+  // which can be adjusted if the actual logo has different dimensions.
   return (
-    <svg 
-      width={size} 
-      height={size * 0.33} 
-      viewBox="0 0 240 80" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="Cyber Sentinels Logo"
-    >
-      <path 
-        d="M62.7273 78.5C31.2727 78.5 10.9091 58 10.9091 40C10.9091 22 31.2727 1.5 62.7273 1.5C80.9091 1.5 95.8182 11.5 102.182 23.5H79.4545C75.2727 18.3 70.3636 15.5 62.7273 15.5C47.0909 15.5 36.3636 26.3 36.3636 40C36.3636 53.7 47.0909 64.5 62.7273 64.5C70.3636 64.5 75.2727 61.7 79.4545 56.5H102.182C95.8182 68.5 80.9091 78.5 62.7273 78.5ZM177.273 1.5C208.727 1.5 229.091 22 229.091 40C229.091 58 208.727 78.5 177.273 78.5C159.091 78.5 144.182 68.5 137.818 56.5H160.545C164.727 61.7 169.636 64.5 177.273 64.5C192.909 64.5 203.636 53.7 203.636 40C203.636 26.3 192.909 15.5 177.273 15.5C169.636 15.5 164.727 18.3 160.545 23.5H137.818C144.182 11.5 159.091 1.5 177.273 1.5ZM120 54C127.733 54 134 47.7333 134 40C134 32.2667 127.733 26 120 26C112.267 26 106 32.2667 106 40C106 47.7333 112.267 54 120 54Z" 
-        fill="white"
-      />
-    </svg>
+    <Image
+      src="/logo.png"
+      alt="The Cyber Sentinels Logo"
+      width={size}
+      height={size}
+      priority // Ensures the logo loads quickly, important for LCP
+    />
   );
 }

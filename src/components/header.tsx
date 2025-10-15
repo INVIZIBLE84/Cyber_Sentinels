@@ -37,7 +37,7 @@ export function Header() {
       onClick={onClick}
       className="transition-transform duration-300 hover:scale-110"
     >
-      <Logo size={80} />
+      <Logo size={60} />
     </Link>
   );
 

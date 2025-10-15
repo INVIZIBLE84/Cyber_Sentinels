@@ -7,7 +7,7 @@ export function Hero() {
     <section className="relative flex items-center justify-center min-h-screen text-center overflow-hidden">
       <div className="z-10 relative px-4 flex flex-col items-center">
         <div className="mb-8">
-          <Logo size={250} />
+          <Logo size={150} />
         </div>
         <h1 
           className="gaming-title text-foreground relative glitch-effect"
