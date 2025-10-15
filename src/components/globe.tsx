@@ -67,7 +67,7 @@ export function Globe() {
     const z = radius * Math.sin(phi) * Math.sin(theta);
 
     const markerGeometry = new THREE.SphereGeometry(0.05, 16, 16);
-    const markerMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color("hsl(var(--primary))") });
+    const markerMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color("hsl(var(--accent))") });
     const marker = new THREE.Mesh(markerGeometry, markerMaterial);
     marker.position.set(x, y, z);
     globeGroup.add(marker);

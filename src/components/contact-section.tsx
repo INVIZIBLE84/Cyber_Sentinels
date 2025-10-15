@@ -73,7 +73,7 @@ export function ContactSection() {
                         <Input
                           placeholder="Your Name"
                           {...field}
-                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-primary"
+                          className="bg-background/50 focus:bg-card border-2 border-border focus:border-primary"
                         />
                       </FormControl>
                       <FormMessage />
@@ -91,7 +91,7 @@ export function ContactSection() {
                           placeholder="your.email@example.com"
                           type="email"
                           {...field}
-                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-primary"
+                          className="bg-background/50 focus:bg-card border-2 border-border focus:border-primary"
                         />
                       </FormControl>
                       <FormMessage />
@@ -108,7 +108,7 @@ export function ContactSection() {
                         <Textarea
                           placeholder="Your inquiry..."
                           {...field}
-                          className="bg-background/50 focus:bg-white border-2 border-border focus:border-primary"
+                          className="bg-background/50 focus:bg-card border-2 border-border focus:border-primary"
                           rows={5}
                         />
                       </FormControl>

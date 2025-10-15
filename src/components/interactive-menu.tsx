@@ -21,7 +21,7 @@ export function InteractiveMenu({ isOpen, onClose }: { isOpen: boolean; onClose:
         <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="relative z-10 text-center">
                 <div className="mb-12">
-                  <Logo size={80} />
+                  <Logo size={120} />
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                     {menuItems.map((item, index) => (

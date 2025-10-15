@@ -15,7 +15,7 @@ const FounderCard = ({ name, title, img }: { name: string; title: string; img: s
       </div>
     </CardHeader>
     <CardContent className="p-6">
-       <CardTitle className="text-xl font-pixel uppercase tracking-wider text-foreground">{name}</CardTitle>
+       <CardTitle className="text-xl font-headline uppercase tracking-wider text-foreground">{name}</CardTitle>
       <p className="text-foreground/80 mt-2 font-body">{title}</p>
     </CardContent>
   </Card>
@@ -25,10 +25,10 @@ export function FoundersSection() {
   return (
     <section id="founders" className="py-20 lg:py-32">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-headline text-center mb-12 uppercase text-neon-blue tracking-widest">
+        <h2 className="text-4xl md:text-5xl font-headline text-center mb-12 uppercase text-primary tracking-widest">
           Meet the Founders
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {founders.map((founder) => (
             <FounderCard key={founder.name} {...founder} />
           ))}

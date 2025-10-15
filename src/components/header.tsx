@@ -38,12 +38,12 @@ export function Header() {
       onClick={onClick}
       className="transition-transform duration-300 hover:scale-110"
     >
-      <Logo size={40} />
+      <Logo size={80} />
     </Link>
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 py-4 bg-background/80 backdrop-blur-sm border-b">
+    <header className="fixed top-0 left-0 right-0 z-40 py-4 bg-background/80 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="hidden md:flex items-center gap-8">
           {leftLinks.map((link) => (
@@ -52,21 +52,7 @@ export function Header() {
         </div>
 
         <div className="md:hidden">
-          <BrandLink />
-        </div>
-
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block">
-          <BrandLink />
-        </div>
-        
-        <div className="hidden md:flex items-center gap-8">
-          {rightLinks.map((link) => (
-            <NavLink key={link.href} {...link} />
-          ))}
-        </div>
-
-        <div className="md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6 text-primary" />
@@ -87,6 +73,17 @@ export function Header() {
             </SheetContent>
           </Sheet>
         </div>
+
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block">
+          <BrandLink />
+        </div>
+        
+        <div className="hidden md:flex items-center gap-8">
+          {rightLinks.map((link) => (
+            <NavLink key={link.href} {...link} />
+          ))}
+        </div>
+
       </div>
     </header>
   );

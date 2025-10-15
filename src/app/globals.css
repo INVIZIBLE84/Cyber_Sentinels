@@ -4,54 +4,71 @@
 
 @layer base {
   :root {
-    --background-start-rgb: 242, 242, 242;
-    --background-end-rgb: 255, 255, 255;
+    --background-start-rgb: 83, 15, 23;
+    --background-end-rgb: 43, 8, 12;
+
+    --background: 353 73% 15%;
+    --foreground: 0 0% 98%;
+
+    --card: 353 73% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 353 73% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 353 73% 20%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 63.9%;
     
-    --background: 245 100% 98%;
-    --foreground: 10 10% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-    --primary: 224 71.4% 4.1%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 220 13% 91%;
-    --secondary-foreground: 224 71.4% 4.1%;
-    --muted: 220 13% 91%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 211 100% 50%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 84.2% 60.2%;
+    --accent: 0 84.2% 60.2%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 83.1%;
+    
     --radius: 0.5rem;
   }
 
   .dark {
-    --background-start-rgb: 10, 10, 10;
-    --background-end-rgb: 30, 30, 30;
+    --background-start-rgb: 83, 15, 23;
+    --background-end-rgb: 43, 8, 12;
 
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 210 20% 98%;
-    --primary-foreground: 211 100% 50%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 211 100% 50%;
-    --accent-foreground: 210 20% 98%;
+    --background: 353 73% 15%;
+    --foreground: 0 0% 98%;
+
+    --card: 353 73% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 353 73% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 353 73% 20%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 63.9%;
+    
+    --accent: 0 84.2% 60.2%;
+    --accent-foreground: 0 0% 98%;
+
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 83.1%;
   }
 }
 
@@ -61,22 +78,9 @@
   }
   body {
     @apply text-foreground;
-    background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+    background: linear-gradient(to bottom right, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
     min-height: 100vh;
     scroll-behavior: smooth;
-  }
-
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><filter id="n" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: -1;
   }
 }
 
@@ -87,24 +91,18 @@
   .game-card:hover {
     @apply border-primary/80 shadow-xl;
   }
-
-  .game-card-purple {
-    @apply bg-card/50 border border-purple-300/50 rounded-lg shadow-lg transition-all duration-300 backdrop-blur-sm;
-  }
-  .game-card-purple:hover {
-     @apply shadow-xl border-purple-400;
-  }
-
+  
   .gaming-title {
     @apply font-title text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-wider text-foreground;
   }
   
   .gaming-button {
-    @apply font-headline uppercase text-lg text-primary-foreground bg-primary py-3 px-8 transition-all duration-300 relative overflow-hidden;
+    @apply font-headline uppercase text-lg bg-primary text-primary-foreground py-3 px-8 transition-all duration-300 relative overflow-hidden;
     border: 2px solid transparent;
   }
 
   .gaming-button:hover {
+    @apply bg-primary/90;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }

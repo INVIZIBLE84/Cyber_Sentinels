@@ -74,7 +74,7 @@ export default function TeamPage() {
       <BackgroundDecorations />
       <main className="relative z-10 container mx-auto px-4 py-20 lg:py-24 text-center">
         <div className="absolute top-8 left-8">
-            <Button asChild className="bg-blue-600 text-white hover:bg-blue-700">
+            <Button asChild variant="outline">
                 <Link href="/"><ArrowLeft className="mr-2 h-4 w-4" /> Return to HQ</Link>
             </Button>
         </div>

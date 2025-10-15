@@ -19,10 +19,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        title: ['"Black Ops One"', ...fontFamily.sans],
-        headline: ['"Roboto Mono"', 'Tektur', ...fontFamily.sans],
-        body: ['"Open Sans"', ...fontFamily.sans],
-        pixel: ['Doto', ...fontFamily.mono],
+        title: ['var(--font-exo2)', ...fontFamily.sans],
+        headline: ['var(--font-exo2)', ...fontFamily.sans],
+        body: ['var(--font-roboto)', ...fontFamily.sans],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -58,18 +57,6 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        'neon-blue': 'hsl(var(--neon-blue))',
-        'neon-green': 'hsl(var(--neon-green))',
-        'hot-pink': 'hsl(var(--hot-pink))',
-        'orange': 'hsl(var(--orange))',
-        'neon-purple': 'hsl(var(--neon-purple))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -93,16 +80,10 @@ export default {
             height: '0',
           },
         },
-         'float': {
-          '0%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-          '100%': { transform: 'translateY(0px)' },
-        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'float': 'float 6s ease-in-out infinite',
       },
       perspective: {
         '1000': '1000px',
