@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background-start-rgb: 83, 15, 23;
+    --background-start-rgb: 23, 7, 15;
     --background-end-rgb: 43, 8, 12;
 
     --background: 353 73% 15%;
@@ -39,7 +39,7 @@
   }
 
   .dark {
-    --background-start-rgb: 83, 15, 23;
+    --background-start-rgb: 23, 7, 15;
     --background-end-rgb: 43, 8, 12;
 
     --background: 353 73% 15%;
@@ -117,6 +117,8 @@
     width: 100%;
     height: 100%;
     background: inherit;
+    color: inherit;
+    text-shadow: inherit;
   }
   .glitch-effect::before {
     left: 2px;
@@ -152,4 +154,20 @@
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
   100% { transform: translateY(0px); }
+}
+
+@keyframes grid-pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
 }

@@ -65,20 +65,12 @@ export default {
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
         'float': {
           '0%': { transform: 'translateY(0px)' },
@@ -101,6 +93,19 @@ export default {
           '80%': { clipPath: 'inset(90% 0 5% 0)' },
           '100%': { clipPath: 'inset(30% 0 60% 0)' },
         },
+        'grid-pan': {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '100% 100%' },
+        },
+        'pulse': {
+          '0%, 100%': { opacity: '0.2' },
+          '50%': { opacity: '0.4' },
+        },
+        'aurora': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -108,6 +113,9 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'glitch-1': 'glitch-anim-1 2.5s infinite linear alternate-reverse',
         'glitch-2': 'glitch-anim-2 2s infinite linear alternate-reverse',
+        'grid-pan': 'grid-pan 60s linear infinite',
+        'pulse': 'pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'aurora': 'aurora 20s ease-in-out infinite',
       },
       perspective: {
         '1000': '1000px',
