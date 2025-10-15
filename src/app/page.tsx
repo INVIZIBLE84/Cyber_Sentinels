@@ -1,7 +1,6 @@
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
 import { AboutSection } from '@/components/about-section';
-import { BranchLocator } from '@/components/branch-locator';
 import { ContactSection } from '@/components/contact-section';
 import { BackgroundDecorations } from '@/components/background-decorations';
 
@@ -13,7 +12,6 @@ export default function Home() {
       <main>
         <Hero />
         <AboutSection />
-        <BranchLocator />
         <ContactSection />
       </main>
     </div>
