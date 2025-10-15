@@ -124,11 +124,6 @@ export default function EventsPage() {
             </Button>
         </div>
 
-        <div className="text-center mt-16 border-t border-border/50 pt-8">
-            <p className="font-body text-foreground/80">For any questions or further details, please do not hesitate to reach out to our event coordinators:</p>
-            <p className="font-headline text-accent text-xl mt-2">BreachHead</p>
-        </div>
-
          <div className="text-center mt-12">
             <Button asChild variant="outline" className="gaming-button bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               <Link href="/">Return to HQ</Link>
