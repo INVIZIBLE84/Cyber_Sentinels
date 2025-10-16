@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -9,9 +10,10 @@ import { Logo } from "./ui/logo";
 
 const navLinks = [
   { href: "/#about-us", label: "About" },
-  { href: "/#contact-us", label: "Contact" },
-  { href: "/events", label: "Events" },
   { href: "/purpose", label: "Purpose" },
+  { href: "/team", label: "Team" },
+  { href: "/events", label: "Events" },
+  { href: "/#contact-us", label: "Contact" },
 ];
 
 export function Header() {
