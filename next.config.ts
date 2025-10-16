@@ -1,8 +1,11 @@
 import type {NextConfig} from 'next';
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig: NextConfig = {
   output: 'export',
   basePath: '/Cyber_Sentinels',
+  assetPrefix: isProd ? '/Cyber_Sentinels/' : undefined,
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -12,14 +15,6 @@ const nextConfig: NextConfig = {
   },
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-    ],
   },
 };
 
