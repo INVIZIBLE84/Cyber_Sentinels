@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Exo_2, Roboto } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'The Cyber Sentinels',
@@ -26,10 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${exo2.variable} ${roboto.variable} font-body antialiased relative`}>
-        {children}
-        <Toaster />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
